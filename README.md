@@ -14,7 +14,7 @@
 
 
 
-#在需要用到的地方实现代理
+#在需要用到的地方实现代理,点击表情后给相应的textview赋值；
 #pragma mark ------------QSCExpressionViewDelegate--------------
 -(void)expressionViewItemClickWith:(NSString *)imgStr andEmojiTag:(NSString *)emojiTag
 {
@@ -50,3 +50,10 @@
         self.editView.commentTextView.attributedText = attStr;
     }
 }
+
+
+
+#把表情图片转成相应的字符串，用于给后台传
+NSString * str = [weakSelf.editView.commentTextView.textStorage getPlainString];
+
+
